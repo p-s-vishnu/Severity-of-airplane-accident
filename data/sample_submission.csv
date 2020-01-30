@@ -1,0 +1,11 @@
+Accident_ID,Severity
+1,Minor_Damage_And_Injuries
+10,Highly_Fatal_And_Damaging
+14,Highly_Fatal_And_Damaging
+17,Significant_Damage_And_Serious_Injuries
+21,Minor_Damage_And_Injuries
+40,Highly_Fatal_And_Damaging
+45,Highly_Fatal_And_Damaging
+50,Significant_Damage_And_Fatalities
+52,Highly_Fatal_And_Damaging
+85,Minor_Damage_And_Injuries

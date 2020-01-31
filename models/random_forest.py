@@ -6,7 +6,12 @@ import numpy as np
 
 params = {
     "random_state"  :5,
-    "n_jobs"        :-1
+    "n_jobs"        :-1,
+    'n_estimators'  : 1000,
+    'max_features': [None],
+    'min_samples_split': [3],
+    'max_depth': [50],
+    "oob_score":True
 }
 
 def train(X,y):
@@ -21,12 +26,16 @@ def train(X,y):
         y_train, y_test = y.iloc[train_index], y.iloc[test_index]
 
         model.fit(X_train,y_train)
-        y_pred = model.predict(X_test)
-        y_true = y_test
-        metrics.append(f1_score(y_true,y_pred,average="weighted"))
+        y_train_pred = model.predict(X_train)
+        y_test_pred = model.predict(X_test)
 
-    print("Train".center(25,'-'))
-    print(np.mean(metrics))
+        train_score = f1_score(y_train,y_train_pred,average="weighted")
+        cross_score = f1_score(y_test,y_test_pred,average="weighted")
+
+        metrics.append([train_score,cross_score])
+
+    print("Train & Cross validation".center(40,'-'))
+    print(np.mean(metrics,axis=0))
 
     model.fit(X,y)
     return model

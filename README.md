@@ -53,9 +53,9 @@ The dataset comprises 3 files:
 - [x] Outlier checks
 - [x] Scaling check
 - [x] Choosing the right k for Cross val
-- [ ] Refit=False in Logistic regression
-- [ ] Reveiw discussions on Hackerearth
-- [ ] Check past work
-- [ ] Feature engineering 
+- [x] Reveiw discussions on Hackerearth
+- [ ] Prepare features
+- [ ] Maximum time: Feature engineering 
+- [ ] Important: Ensembling
 - [ ] Refer competition.md
 - [ ] Refer kaggle guides

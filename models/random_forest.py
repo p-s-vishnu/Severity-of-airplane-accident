@@ -7,16 +7,21 @@ import numpy as np
 params = {
     "random_state"  :5,
     "n_jobs"        :-1,
-    'n_estimators'  : 1000,
-    'max_features': [None],
-    'min_samples_split': [3],
-    'max_depth': [50],
+    'n_estimators'  : 5000,
+    'max_features': None,
+    'min_samples_split': 3,
+    'max_depth': 50,
     "oob_score":True
+}
+
+base_params = {
+    "random_state":5,
+    "n_jobs":-1
 }
 
 def train(X,y):
 
-    model = RandomForestClassifier(random_state=5,n_jobs=-1)
+    model = RandomForestClassifier(**params)
     skf = StratifiedKFold(shuffle=True,random_state=42)
     
     # print model metrics
@@ -35,7 +40,7 @@ def train(X,y):
         metrics.append([train_score,cross_score])
 
     print("Train & Cross validation".center(40,'-'))
-    print(np.mean(metrics,axis=0))
+    print(np.mean(metrics,axis=0)*100)
 
     model.fit(X,y)
     return model

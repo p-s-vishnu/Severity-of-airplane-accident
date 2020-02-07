@@ -1,46 +1,43 @@
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import StratifiedShuffleSplit,StratifiedKFold
-from sklearn.metrics import f1_score
-import tqdm
+from sklearn.model_selection import StratifiedShuffleSplit,StratifiedKFold,RepeatedKFold
 import numpy as np
+from xgboost import XGBClassifier
+
+# custom module
+from models.validate import cross_validate 
 
 params = {
-    "random_state"  :5,
-    "n_jobs"        :-1,
-    'n_estimators'  : 5000,
-    'max_features': None,
+    "random_state"  :   5,
+    "n_jobs"        :   -1,
+    'n_estimators'  :   4000,
+    'max_features'  :   5,
     'min_samples_split': 3,
-    'max_depth': 50,
-    "oob_score":True
+    'max_depth'     :   40,
+    "oob_score"     :   True,
+    "class_weight"  :"balanced"
 }
 
 base_params = {
     "random_state":5,
-    "n_jobs":-1
+    "n_jobs":-1,
+    "class_weight":"balanced",
 }
 
 def train(X,y):
 
-    model = RandomForestClassifier(**params)
-    skf = StratifiedKFold(shuffle=True,random_state=42)
+    model = RandomForestClassifier(**base_params)
+    # model = XGBClassifier(learning_rate=1,n_jobs=-1,objective="multi:softmax",random_state=5,max_depth=3,n_estimators=1200)
+    
+    # skf = StratifiedKFold(n_splits=2, shuffle=True,random_state=42)
+    sss = StratifiedShuffleSplit(n_splits=2, test_size=0.8, random_state=42)
+    # rkf = RepeatedKFold(n_splits=2, n_repeats=2, random_state=42)
     
     # print model metrics
-    metrics = []
-    for train_index, test_index in tqdm.tqdm(skf.split(X, y)):
-        X_train, X_test = X.iloc[train_index], X.iloc[test_index]
-        y_train, y_test = y.iloc[train_index], y.iloc[test_index]
-
-        model.fit(X_train,y_train)
-        y_train_pred = model.predict(X_train)
-        y_test_pred = model.predict(X_test)
-
-        train_score = f1_score(y_train,y_train_pred,average="weighted")
-        cross_score = f1_score(y_test,y_test_pred,average="weighted")
-
-        metrics.append([train_score,cross_score])
+    metrics = cross_validate(sss, X, y, model)
 
     print("Train & Cross validation".center(40,'-'))
     print(np.mean(metrics,axis=0)*100)
 
     model.fit(X,y)
     return model
+

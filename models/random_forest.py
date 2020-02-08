@@ -9,10 +9,11 @@ from models.validate import cross_validate
 params = {
     "random_state"  :   5,
     "n_jobs"        :   -1,
-    'n_estimators'  :   4000,
-    'max_features'  :   5,
+    # "criterion"     : "entropy",
+    'n_estimators'  :   930,
+    # 'max_features'  :   5,
     'min_samples_split': 3,
-    'max_depth'     :   40,
+    'max_depth'     :   30,
     "oob_score"     :   True,
     "class_weight"  :"balanced"
 }
@@ -25,7 +26,7 @@ base_params = {
 
 def train(X,y):
 
-    model = RandomForestClassifier(**base_params)
+    model = RandomForestClassifier(**params)
     # model = XGBClassifier(learning_rate=1,n_jobs=-1,objective="multi:softmax",random_state=5,max_depth=3,n_estimators=1200)
     
     # skf = StratifiedKFold(n_splits=2, shuffle=True,random_state=42)

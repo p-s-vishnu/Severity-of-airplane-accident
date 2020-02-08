@@ -1,3 +1,5 @@
+from sklearn.experimental import enable_hist_gradient_boosting
+
 from sklearn.model_selection import StratifiedShuffleSplit
 import numpy as np
 import pandas as pd
@@ -5,7 +7,7 @@ import pandas as pd
 # models
 from sklearn.linear_model import LogisticRegression,RidgeClassifier
 from sklearn.tree import DecisionTreeClassifier,ExtraTreeClassifier
-from sklearn.ensemble import RandomForestClassifier,ExtraTreesClassifier,GradientBoostingClassifier,AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier,ExtraTreesClassifier,GradientBoostingClassifier,AdaBoostClassifier,HistGradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier,NearestCentroid,RadiusNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.svm import LinearSVC,SVC,NuSVC
@@ -39,6 +41,7 @@ def classification_report(X,y):
         ExtraTreeClassifier(random_state=seed),
         ExtraTreesClassifier(random_state=seed,n_jobs=-1),
         GradientBoostingClassifier(random_state=seed),
+        HistGradientBoostingClassifier(random_state=5),
         AdaBoostClassifier(random_state=seed),
         KNeighborsClassifier(n_neighbors=3),
         NearestCentroid(),

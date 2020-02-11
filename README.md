@@ -50,16 +50,15 @@ The dataset comprises 3 files:
 ## Todo
 
 - [x] Your Baseline
-- [ ] Literacy survey
-- [ ] Research papers
+- [x] Literacy survey
 - [x] Outlier checks
 - [x] Scaling check
 - [x] Choosing the right k for Cross val
 - [x] Reveiw discussions on Hackerearth
 - [x] Try out different models
-- [ ] Refer competition.md
+- [x] Refer competition.md
 - [x] Refer kaggle guides
-- [ ] Maximum time: Feature engineering  - Synergy variables
+- [x] Maximum time: Feature engineering  - Synergy variables
 - [ ] Important: Ensembling
-- [ ] Explore features more
+- [ ] Research papers
 - [ ] Blend

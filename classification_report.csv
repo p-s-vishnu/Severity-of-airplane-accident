@@ -1,0 +1,93 @@
+model,score
+"HistGradientBoostingClassifier(l2_regularization=0.0, learning_rate=0.1,
+                               loss='auto', max_bins=255, max_depth=None,
+                               max_iter=100, max_leaf_nodes=31,
+                               min_samples_leaf=20, n_iter_no_change=None,
+                               random_state=5, scoring=None, tol=1e-07,
+                               validation_fraction=0.1, verbose=0,
+                               warm_start=False)",92.5846358835838
+"RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='auto',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=100,
+                       n_jobs=-1, oob_score=False, random_state=5, verbose=0,
+                       warm_start=False)",92.34676387548163
+"XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+              colsample_bynode=1, colsample_bytree=1, gamma=0, learning_rate=1,
+              max_delta_step=0, max_depth=3, min_child_weight=1, missing=None,
+              n_estimators=100, n_jobs=-1, nthread=None,
+              objective='multi:softprob', random_state=0, reg_alpha=0,
+              reg_lambda=1, scale_pos_weight=1, seed=None, silent=None,
+              subsample=1, verbosity=1)",91.61209772095951
+"DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=5, splitter='best')",90.3938266878839
+"ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='auto',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_impurity_split=None,
+                     min_samples_leaf=1, min_samples_split=2,
+                     min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=-1,
+                     oob_score=False, random_state=5, verbose=0,
+                     warm_start=False)",89.00980568882431
+"GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='deviance', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_impurity_split=None,
+                           min_samples_leaf=1, min_samples_split=2,
+                           min_weight_fraction_leaf=0.0, n_estimators=100,
+                           n_iter_no_change=None, presort='deprecated',
+                           random_state=5, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)",87.3359551609939
+"ExtraTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                    max_depth=None, max_features='auto', max_leaf_nodes=None,
+                    min_impurity_decrease=0.0, min_impurity_split=None,
+                    min_samples_leaf=1, min_samples_split=2,
+                    min_weight_fraction_leaf=0.0, random_state=5,
+                    splitter='random')",72.51234128454543
+"QuadraticDiscriminantAnalysis(priors=None, reg_param=0.0,
+                              store_covariance=False, tol=0.0001)",71.72649047611877
+"LinearDiscriminantAnalysis(n_components=None, priors=None, shrinkage=None,
+                           solver='svd', store_covariance=False, tol=0.0001)",51.97482868212448
+"AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=1.0,
+                   n_estimators=50, random_state=5)",40.50227007635916
+"RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=2000, normalize=False, random_state=5, solver='auto',
+                tol=0.001)",38.557739594580184
+"GaussianNB(priors=None, var_smoothing=1e-09)",32.00653696170886
+"KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=None, n_neighbors=3, p=2,
+                     weights='uniform')",30.7774029133612
+"GaussianProcessClassifier(copy_X_train=True, kernel=None, max_iter_predict=100,
+                          multi_class='one_vs_rest', n_jobs=-1,
+                          n_restarts_optimizer=0, optimizer='fmin_l_bfgs_b',
+                          random_state=5, warm_start=False)",30.527165067855044
+"NuSVC(break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+      decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+      max_iter=-1, nu=0.5, probability=False, random_state=5, shrinking=True,
+      tol=0.001, verbose=False)",25.34143482943473
+"LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=5000,
+                   multi_class='multinomial', n_jobs=-1, penalty='l1',
+                   random_state=5, solver='saga', tol=0.0001, verbose=0,
+                   warm_start=False)",14.567113082142125
+"NearestCentroid(metric='euclidean', shrink_threshold=None)",14.35651023412615
+"SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+    max_iter=-1, probability=False, random_state=5, shrinking=True, tol=0.001,
+    verbose=False)",14.246386148098477
+"BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True)",14.237431733256681
+"MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+              beta_2=0.999, early_stopping=False, epsilon=1e-08,
+              hidden_layer_sizes=(100,), learning_rate='constant',
+              learning_rate_init=0.001, max_fun=15000, max_iter=200,
+              momentum=0.9, n_iter_no_change=10, nesterovs_momentum=True,
+              power_t=0.5, random_state=5, shuffle=True, solver='adam',
+              tol=0.0001, validation_fraction=0.1, verbose=False,
+              warm_start=False)",11.699619463812235
